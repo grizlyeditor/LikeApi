@@ -40,6 +40,15 @@ def block_invalid_key():
 def not_found(error):
     return "Not Found", 404
 
+# Home Route to avoid 404
+@app.route("/")
+def home():
+    return "🔥 Like API is working! Use /like?uid=...&server_name=...&key=grizly"
+
+# Favicon Route to avoid 404
+@app.route("/favicon.ico")
+def favicon():
+    return "", 204  # Empty response, no error
 
 def load_tokens(server_name):
     if server_name == "IND":
